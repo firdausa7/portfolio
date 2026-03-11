@@ -8,7 +8,6 @@ import {
   SiTypescript,
   SiTailwindcss,
   SiHtml5,
-  SiCss,
   SiOpenai,
   SiGooglegemini,
   SiLangchain,
@@ -29,6 +28,7 @@ import {
   ExternalLink,
   Linkedin,
   Code2,
+  Palette,
   Users,
   CheckCircle2,
 } from "lucide-react";
@@ -85,7 +85,7 @@ const techStack: Record<string, TechItem[]> = {
     { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
     { name: "Tailwind", icon: SiTailwindcss, color: "#38BDF8" },
     { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
-    { name: "CSS", icon: SiCss, color: "#1572B6" },
+    { name: "CSS3", icon: Palette, color: "#1572B6" },
   ],
   "AI / APIs": [
     { name: "OpenAI API", icon: SiOpenai, color: "#00e5ff" },
