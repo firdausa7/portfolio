@@ -39,7 +39,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5"
+          ? "bg-background/90 backdrop-blur-md border-b border-black/5 dark:border-white/5"
           : "bg-transparent"
       }`}
     >
@@ -47,7 +47,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="#home"
-          className="font-display text-white text-sm tracking-[0.3em] uppercase font-bold hover:text-[#00e5ff] transition-colors"
+          className="font-display text-foreground text-sm tracking-[0.3em] uppercase font-bold hover:text-accent transition-colors"
         >
           FDS
         </Link>
@@ -58,8 +58,8 @@ export default function Navbar() {
             <li key={link.id}>
               <Link
                 href={link.href}
-                className={`text-[11px] tracking-[0.2em] uppercase font-medium transition-colors hover:text-[#00e5ff] ${
-                  activeSection === link.id ? "text-[#00e5ff]" : "text-zinc-500"
+                className={`text-[11px] tracking-[0.2em] uppercase font-medium transition-colors hover:text-accent ${
+                  activeSection === link.id ? "text-accent" : "text-zinc-500"
                 }`}
               >
                 {link.label}
@@ -73,7 +73,7 @@ export default function Navbar() {
           <ThemeToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-zinc-400 hover:text-white transition-colors"
+            className="md:hidden p-2 text-zinc-600 dark:text-zinc-400 hover:text-foreground transition-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -88,7 +88,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden overflow-hidden bg-[#0a0a0a] border-b border-white/5"
+            className="md:hidden overflow-hidden bg-background border-b border-black/5 dark:border-white/5"
           >
             <ul className="px-6 py-5 flex flex-col gap-5">
               {navLinks.map((link) => (
@@ -96,8 +96,8 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`text-xs tracking-[0.2em] uppercase font-medium transition-colors hover:text-[#00e5ff] ${
-                      activeSection === link.id ? "text-[#00e5ff]" : "text-zinc-400"
+                    className={`text-xs tracking-[0.2em] uppercase font-medium transition-colors hover:text-accent ${
+                      activeSection === link.id ? "text-accent" : "text-zinc-600 dark:text-zinc-400"
                     }`}
                   >
                     {link.label}

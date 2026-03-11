@@ -141,7 +141,7 @@ export default function ProfilePhoto({
             className="absolute inset-0 rounded-full"
             style={{
               background:
-                "conic-gradient(from 0deg, #00e5ff, #0a0a0a 35%, #00e5ff 55%, #0a0a0a 80%, #00e5ff)",
+                "conic-gradient(from 0deg, #00e5ff, var(--background) 35%, #00e5ff 55%, var(--background) 80%, #00e5ff)",
               boxShadow: "0 20px 60px rgba(0, 229, 255, 0.25)",
               zIndex: 0,
             }}
@@ -158,7 +158,7 @@ export default function ProfilePhoto({
             className="absolute rounded-full"
             style={{
               inset: OUTER_RING,
-              background: "#0a0a0a",
+              background: "var(--background)",
               zIndex: 1,
             }}
           />
