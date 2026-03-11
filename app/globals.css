@@ -2,10 +2,10 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #f5f4ef;
-  --foreground: #0a0a0a;
-  --accent: #0099bb;
-  --muted: #6b6b6b;
+  --background:    #f5f4ef;
+  --foreground:    #111111;
+  --accent:        #0097b2;
+  --muted:         #52525b;
 }
 
 @theme inline {
@@ -25,6 +25,14 @@
   --muted: #6b6b6b;
 }
 
+/* Light mode — project image overlays need to stay dark */
+.project-img-overlay {
+  background: linear-gradient(to top, rgba(245,244,239,0.95), rgba(245,244,239,0.1) 40%, transparent);
+}
+.dark .project-img-overlay {
+  background: linear-gradient(to top, #0a0a0a, rgba(10,10,10,0.1) 40%, transparent);
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -40,6 +48,13 @@ html {
 }
 .glow-cyan:hover {
   box-shadow: 0 0 32px 0 rgba(0, 229, 255, 0.4);
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px 0 color-mix(in srgb, var(--accent) 35%, transparent);
+}
+.glow-accent:hover {
+  box-shadow: 0 0 32px 0 color-mix(in srgb, var(--accent) 50%, transparent);
 }
 
 /* Marquee animations */

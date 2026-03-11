@@ -201,8 +201,8 @@ const stagger = {
 
 function SectionLabel({ text }: { text: string }) {
   return (
-    <p className="text-[#00e5ff] text-[11px] tracking-[0.35em] uppercase font-semibold mb-4 flex items-center gap-3">
-      <span className="w-8 h-px bg-[#00e5ff]" />
+    <p className="text-accent text-[11px] tracking-[0.35em] uppercase font-semibold mb-4 flex items-center gap-3">
+      <span className="w-8 h-px bg-accent" />
       {text}
     </p>
   );
@@ -212,7 +212,7 @@ function SectionLabel({ text }: { text: string }) {
 
 export default function Home() {
   return (
-    <div className="bg-[#0a0a0a] min-h-screen text-[#f0f0f0] font-sans">
+    <div className="bg-background min-h-screen text-foreground font-sans">
 
       {/* ══════════════════════════════════════════════════════ HERO */}
       <section
@@ -222,13 +222,13 @@ export default function Home() {
         {/* Animated grid background */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Grid lines — cyan at 8% */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,229,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(0,229,255,0.08)_1px,transparent_1px)] [background-size:60px_60px]" />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.06)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(0,229,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(0,229,255,0.08)_1px,transparent_1px)] [background-size:60px_60px]" />
           {/* Top glow */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(0,229,255,0.07),transparent)]" />
           {/* Vignette — edges fade to dark */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_85%_80%_at_50%_50%,transparent_40%,rgba(10,10,10,0.75)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_85%_80%_at_50%_50%,transparent_40%,rgba(245,244,239,0.7)_100%)] dark:bg-[radial-gradient(ellipse_85%_80%_at_50%_50%,transparent_40%,rgba(10,10,10,0.75)_100%)]" />
           {/* Bottom fade */}
-          <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto w-full grid lg:grid-cols-[1fr_auto] gap-16 lg:gap-24 items-center">
@@ -239,9 +239,9 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-[#00e5ff] text-[13px] tracking-[0.45em] uppercase font-semibold mb-8 flex items-center gap-3"
+              className="text-accent text-[13px] tracking-[0.45em] uppercase font-semibold mb-8 flex items-center gap-3"
             >
-              <span className="w-8 h-px bg-[#00e5ff]" />
+              <span className="w-8 h-px bg-accent" />
               <CheckCircle2 size={14} className="shrink-0" />
               Meta Certified · Nairobi, Kenya · Available for Opportunities
             </motion.p>
@@ -250,12 +250,12 @@ export default function Home() {
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="font-display text-[clamp(3.2rem,9vw,8rem)] text-white mb-6"
+              className="font-display text-[clamp(3.2rem,9vw,8rem)] text-foreground mb-6"
               style={{ letterSpacing: "-0.02em", lineHeight: 0.93 }}
             >
               FIRDAUSA
               <br />
-              <span className="text-[#00e5ff]">DAHIR</span>
+              <span className="text-accent">DAHIR</span>
               <br />
               SALAT
             </motion.h1>
@@ -265,7 +265,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="text-lg md:text-2xl font-display text-zinc-300 mb-6 h-9 flex items-center"
+              className="text-lg md:text-2xl font-display text-zinc-600 dark:text-zinc-300 mb-6 h-9 flex items-center"
             >
               I'm a&nbsp;
               <Typewriter />
@@ -275,15 +275,15 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="border-l-[3px] border-[#00e5ff] pl-5 italic mb-14 max-w-md"
+              className="border-l-[3px] border-accent pl-5 italic mb-14 max-w-md"
               style={{ opacity: 0.9 }}
             >
-              <span className="text-[#00e5ff] not-italic font-bold text-xl leading-none mr-0.5">&ldquo;</span>
-              <span className="text-zinc-200 text-[15px] md:text-[18px] font-[500] leading-relaxed">
+              <span className="text-accent not-italic font-bold text-xl leading-none mr-0.5">&ldquo;</span>
+              <span className="text-zinc-700 dark:text-zinc-200 text-[15px] md:text-[18px] font-[500] leading-relaxed">
                 I want to make things and make a{" "}
-                <span className="text-white font-semibold not-italic">Difference</span>
+                <span className="text-foreground font-semibold not-italic">Difference</span>
               </span>
-              <span className="text-[#00e5ff] not-italic font-bold text-xl leading-none ml-0.5">&rdquo;</span>
+              <span className="text-accent not-italic font-bold text-xl leading-none ml-0.5">&rdquo;</span>
             </motion.blockquote>
 
             <motion.div
@@ -296,7 +296,7 @@ export default function Home() {
               <a
                 href="/resume.pdf"
                 download="Firdausa_Salat_Resume.pdf"
-                className="glow-cyan relative overflow-hidden inline-flex items-center gap-2 px-6 py-3 bg-[#00e5ff] text-[#0a0a0a] text-sm font-bold rounded-md active:scale-[0.97] transition-transform duration-100 group"
+                className="glow-accent relative overflow-hidden inline-flex items-center gap-2 px-6 py-3 bg-accent text-[#0a0a0a] dark:text-[#0a0a0a] text-sm font-bold rounded-md active:scale-[0.97] transition-transform duration-100 group"
               >
                 {/* Shimmer sweep on hover */}
                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
@@ -306,7 +306,7 @@ export default function Home() {
               {/* View Projects — outlined, fills on hover */}
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-[#00e5ff]/60 text-[#00e5ff] text-sm font-semibold rounded-md hover:bg-[#00e5ff] hover:text-[#0a0a0a] hover:border-[#00e5ff] active:scale-[0.97] transition-all duration-200 group"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-accent/60 text-accent text-sm font-semibold rounded-md hover:bg-accent hover:text-[#0a0a0a] hover:border-accent active:scale-[0.97] transition-all duration-200 group"
               >
                 View Projects
                 <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
@@ -332,7 +332,7 @@ export default function Home() {
           transition={{ delay: 1.5, duration: 0.6 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="text-zinc-700 text-[10px] tracking-[0.3em] uppercase">Scroll</span>
+          <span className="text-zinc-500 dark:text-zinc-700 text-[10px] tracking-[0.3em] uppercase">Scroll</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
@@ -344,7 +344,7 @@ export default function Home() {
       {/* ══════════════════════════════════════════════════════ CERTIFICATIONS */}
       <section
         id="certifications"
-        className="py-16 px-6 md:px-12 lg:px-24 border-t border-white/5"
+        className="py-16 px-6 md:px-12 lg:px-24 border-t border-black/5 dark:border-white/5"
       >
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -376,11 +376,11 @@ export default function Home() {
                     </div>
                   </div>
                   <div>
-                    <p className="text-white font-semibold text-sm leading-tight mb-1">
+                    <p className="text-foreground font-semibold text-sm leading-tight mb-1">
                       {cert.title}
                     </p>
-                    <p className="text-zinc-400 text-xs mb-1">{cert.issuer}</p>
-                    <p className="text-zinc-600 text-[11px]">{cert.detail}</p>
+                    <p className="text-zinc-600 dark:text-zinc-400 text-xs mb-1">{cert.issuer}</p>
+                    <p className="text-zinc-500 dark:text-zinc-600 text-[11px]">{cert.detail}</p>
                   </div>
                 </motion.div>
               );
@@ -392,7 +392,7 @@ export default function Home() {
       {/* ══════════════════════════════════════════════════════ ABOUT */}
       <section
         id="about"
-        className="py-28 md:py-36 px-6 md:px-12 lg:px-24 border-t border-white/5"
+        className="py-28 md:py-36 px-6 md:px-12 lg:px-24 border-t border-black/5 dark:border-white/5"
       >
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -415,26 +415,26 @@ export default function Home() {
               transition={{ duration: 0.65 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] leading-[1.08] text-white mb-8">
+              <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] leading-[1.08] text-foreground mb-8">
                 Building fast, beautiful,{" "}
-                <span className="text-[#00e5ff]">and intelligent</span>{" "}
+                <span className="text-accent">and intelligent</span>{" "}
                 web experiences.
               </h2>
-              <div className="w-12 h-px bg-[#00e5ff]/40 mb-8" />
-              <div className="space-y-5 text-zinc-400 text-[15px] leading-[1.9]">
+              <div className="w-12 h-px bg-accent/40 mb-8" />
+              <div className="space-y-5 text-zinc-600 dark:text-zinc-400 text-[15px] leading-[1.9]">
                 <p>
-                  As a <span className="text-zinc-200 font-medium">Meta Certified Frontend Engineer</span>,
+                  As a <span className="text-zinc-700 dark:text-zinc-200 font-medium">Meta Certified Frontend Engineer</span>,
                   I specialize in React, Next.js, and Tailwind CSS — and I layer in Generative AI
                   to make products smarter.
                 </p>
                 <p>
                   Based in Nairobi, I'm on a mission to build technology that creates real impact
-                  across <span className="text-zinc-200 font-medium">Africa and beyond</span>.
+                  across <span className="text-zinc-700 dark:text-zinc-200 font-medium">Africa and beyond</span>.
                   I've worked on everything from water management dashboards to AI-powered logistics platforms.
                 </p>
                 <p>
                   Currently a Fellow at{" "}
-                  <span className="text-zinc-200 font-medium">Tech4Dev's Women Techsters Fellowship</span>,
+                  <span className="text-zinc-700 dark:text-zinc-200 font-medium">Tech4Dev's Women Techsters Fellowship</span>,
                   collaborating with engineers across the continent to build the next generation of
                   African tech.
                 </p>
@@ -460,12 +460,12 @@ export default function Home() {
                   key={item.label}
                   variants={fadeUp}
                   transition={{ duration: 0.45 }}
-                  className="border border-white/[0.06] rounded-xl p-5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-[#00e5ff]/15 transition-all duration-200"
+                  className="border border-black/[0.08] dark:border-white/[0.06] rounded-xl p-5 bg-black/[0.03] dark:bg-white/[0.02] hover:bg-black/[0.05] dark:hover:bg-white/[0.04] hover:border-accent/15 transition-all duration-200"
                 >
-                  <p className="text-zinc-600 text-[10px] tracking-[0.2em] uppercase mb-1.5 font-medium">
+                  <p className="text-zinc-500 dark:text-zinc-600 text-[10px] tracking-[0.2em] uppercase mb-1.5 font-medium">
                     {item.label}
                   </p>
-                  <p className="text-white text-sm font-medium">{item.value}</p>
+                  <p className="text-foreground text-sm font-medium">{item.value}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -476,7 +476,7 @@ export default function Home() {
       {/* ══════════════════════════════════════════════════════ TECH STACK */}
       <section
         id="stack"
-        className="py-24 md:py-32 px-6 md:px-12 lg:px-24 border-t border-white/5"
+        className="py-24 md:py-32 px-6 md:px-12 lg:px-24 border-t border-black/5 dark:border-white/5"
       >
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -488,7 +488,7 @@ export default function Home() {
             className="mb-14"
           >
             <SectionLabel text="Stack" />
-            <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] text-white">
+            <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] text-foreground">
               What I Work With
             </h2>
           </motion.div>
@@ -507,7 +507,7 @@ export default function Home() {
                   transition={{ duration: 0.55, delay: catIdx * 0.08 }}
                   viewport={{ once: true }}
                 >
-                  <p className="text-zinc-600 text-[10px] tracking-[0.25em] uppercase font-medium mb-3 px-1">
+                  <p className="text-zinc-500 dark:text-zinc-600 text-[10px] tracking-[0.25em] uppercase font-medium mb-3 px-1">
                     {category}
                   </p>
                   {/* Marquee track — overflow hidden + edge fade */}
@@ -522,14 +522,14 @@ export default function Home() {
                         return (
                           <div
                             key={`${item.name}-${i}`}
-                            className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:border-[#00e5ff]/25 hover:bg-[#00e5ff]/[0.05] transition-all duration-200 group cursor-default shrink-0"
+                            className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-black/[0.08] dark:border-white/[0.06] bg-black/[0.03] dark:bg-white/[0.02] hover:border-accent/25 hover:bg-accent/[0.05] transition-all duration-200 group cursor-default shrink-0"
                           >
                             <Icon
                               size={15}
                               style={{ color: item.color }}
                               className="group-hover:scale-110 transition-transform duration-200"
                             />
-                            <span className="text-zinc-400 text-[13px] font-medium group-hover:text-zinc-200 transition-colors duration-200 whitespace-nowrap">
+                            <span className="text-zinc-600 dark:text-zinc-400 text-[13px] font-medium group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors duration-200 whitespace-nowrap">
                               {item.name}
                             </span>
                           </div>
@@ -547,7 +547,7 @@ export default function Home() {
       {/* ══════════════════════════════════════════════════════ EXPERIENCE */}
       <section
         id="experience"
-        className="py-24 md:py-32 px-6 md:px-12 lg:px-24 border-t border-white/5"
+        className="py-24 md:py-32 px-6 md:px-12 lg:px-24 border-t border-black/5 dark:border-white/5"
       >
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -559,7 +559,7 @@ export default function Home() {
             className="mb-14"
           >
             <SectionLabel text="Experience" />
-            <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] text-white">
+            <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] text-foreground">
               Where I've Been
             </h2>
           </motion.div>
@@ -573,13 +573,13 @@ export default function Home() {
                 whileInView="visible"
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="border border-white/[0.06] rounded-2xl overflow-hidden bg-white/[0.02] hover:border-[#00e5ff]/10 transition-all duration-200"
+                className="border border-black/[0.08] dark:border-white/[0.06] rounded-2xl overflow-hidden bg-black/[0.03] dark:bg-white/[0.02] hover:border-accent/10 transition-all duration-200"
               >
                 {/* Header */}
-                <div className="p-8 border-b border-white/[0.05]">
+                <div className="p-8 border-b border-black/5 dark:border-white/[0.05]">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
                     <div>
-                      <p className="text-[#00e5ff] text-[10px] tracking-[0.25em] uppercase font-bold mb-2">
+                      <p className="text-accent text-[10px] tracking-[0.25em] uppercase font-bold mb-2">
                         {entry.role}
                       </p>
                       {entry.companyLink ? (
@@ -587,23 +587,23 @@ export default function Home() {
                           href={entry.companyLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-display text-xl text-white hover:text-[#00e5ff] transition-colors duration-200 inline-flex items-center gap-1.5 group/link mb-1"
+                          className="font-display text-xl text-foreground hover:text-accent transition-colors duration-200 inline-flex items-center gap-1.5 group/link mb-1"
                         >
                           {entry.company}
                           <ArrowUpRight size={15} className="opacity-0 group-hover/link:opacity-100 transition-opacity" />
                         </a>
                       ) : (
-                        <h3 className="font-display text-xl text-white mb-1">
+                        <h3 className="font-display text-xl text-foreground mb-1">
                           {entry.company}
                         </h3>
                       )}
-                      <p className="text-zinc-600 text-xs">{entry.companyNote}</p>
+                      <p className="text-zinc-500 dark:text-zinc-600 text-xs">{entry.companyNote}</p>
                     </div>
                     <div className="text-right shrink-0">
-                      <p className="text-zinc-400 text-xs mb-1">{entry.duration}</p>
-                      <p className="text-zinc-600 text-[11px]">{entry.location}</p>
+                      <p className="text-zinc-600 dark:text-zinc-400 text-xs mb-1">{entry.duration}</p>
+                      <p className="text-zinc-500 dark:text-zinc-600 text-[11px]">{entry.location}</p>
                       {entry.certId && (
-                        <p className="text-zinc-700 text-[10px] mt-1 font-mono">{entry.certId}</p>
+                        <p className="text-zinc-500 dark:text-zinc-700 text-[10px] mt-1 font-mono">{entry.certId}</p>
                       )}
                     </div>
                   </div>
@@ -613,8 +613,8 @@ export default function Home() {
                 <div className="p-8">
                   <ul className="space-y-3 mb-6">
                     {entry.bullets.map((bullet, bi) => (
-                      <li key={bi} className="flex items-start gap-3 text-zinc-400 text-[13px] md:text-sm leading-relaxed">
-                        <span className="mt-[7px] w-1 h-1 rounded-full bg-[#00e5ff] flex-shrink-0" />
+                      <li key={bi} className="flex items-start gap-3 text-zinc-600 dark:text-zinc-400 text-[13px] md:text-sm leading-relaxed">
+                        <span className="mt-[7px] w-1 h-1 rounded-full bg-accent flex-shrink-0" />
                         {bullet}
                       </li>
                     ))}
@@ -623,7 +623,7 @@ export default function Home() {
                     {entry.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 rounded-full text-[11px] font-medium bg-white/[0.04] text-zinc-500 border border-white/[0.06]"
+                        className="px-3 py-1 rounded-full text-[11px] font-medium bg-black/[0.05] dark:bg-white/[0.04] text-zinc-500 border border-black/[0.08] dark:border-white/[0.06]"
                       >
                         {tag}
                       </span>
@@ -639,7 +639,7 @@ export default function Home() {
       {/* ══════════════════════════════════════════════════════ PROJECTS */}
       <section
         id="projects"
-        className="py-24 md:py-32 px-6 md:px-12 lg:px-24 border-t border-white/5"
+        className="py-24 md:py-32 px-6 md:px-12 lg:px-24 border-t border-black/5 dark:border-white/5"
       >
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -651,7 +651,7 @@ export default function Home() {
             className="mb-14"
           >
             <SectionLabel text="Work" />
-            <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] text-white">
+            <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] text-foreground">
               Selected Projects
             </h2>
           </motion.div>
@@ -665,25 +665,25 @@ export default function Home() {
                 whileInView="visible"
                 transition={{ duration: 0.55, delay: i * 0.08 }}
                 viewport={{ once: true }}
-                className="group border border-white/[0.06] rounded-2xl overflow-hidden bg-white/[0.02] hover:border-[#00e5ff]/20 transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                className="group border border-black/[0.08] dark:border-white/[0.06] rounded-2xl overflow-hidden bg-black/[0.03] dark:bg-white/[0.02] hover:border-accent/20 transition-all duration-300 hover:-translate-y-1 flex flex-col"
               >
                 {/* Image */}
-                <div className="relative h-52 overflow-hidden bg-zinc-900">
+                <div className="relative h-52 overflow-hidden bg-zinc-100 dark:bg-zinc-900">
                   <Image
                     src={project.image}
                     alt={project.name}
                     fill
                     className="object-cover group-hover:scale-[1.04] transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/10 to-transparent" />
-                  <span className="absolute top-4 left-5 font-display text-5xl font-bold text-white/[0.05] select-none leading-none">
+                  <div className="absolute inset-0 project-img-overlay" />
+                  <span className="absolute top-4 left-5 font-display text-5xl font-bold text-black/[0.06] dark:text-white/[0.05] select-none leading-none">
                     {project.id}
                   </span>
                 </div>
 
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="font-display text-lg text-white mb-2 group-hover:text-[#00e5ff] transition-colors duration-200">
+                  <h3 className="font-display text-lg text-foreground mb-2 group-hover:text-accent transition-colors duration-200">
                     {project.name}
                   </h3>
                   <p className="text-zinc-500 text-[13px] leading-relaxed mb-4 flex-grow">
@@ -693,7 +693,7 @@ export default function Home() {
                     {project.tech.map((t) => (
                       <span
                         key={t}
-                        className="px-2.5 py-1 rounded-full text-[11px] font-medium bg-white/[0.04] text-zinc-500 border border-white/[0.06]"
+                        className="px-2.5 py-1 rounded-full text-[11px] font-medium bg-black/[0.05] dark:bg-white/[0.04] text-zinc-500 border border-black/[0.08] dark:border-white/[0.06]"
                       >
                         {t}
                       </span>
@@ -705,7 +705,7 @@ export default function Home() {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#00e5ff]/10 border border-[#00e5ff]/20 text-[#00e5ff] text-[12px] font-semibold hover:bg-[#00e5ff]/20 transition-all duration-200"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-[12px] font-semibold hover:bg-accent/20 transition-all duration-200"
                     >
                       <ExternalLink size={12} />
                       Live Demo
@@ -715,7 +715,7 @@ export default function Home() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/[0.08] text-zinc-400 text-[12px] font-medium hover:border-white/20 hover:text-white transition-all duration-200"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-black/[0.1] dark:border-white/[0.08] text-zinc-600 dark:text-zinc-400 text-[12px] font-medium hover:border-black/20 dark:hover:border-white/20 hover:text-foreground transition-all duration-200"
                       >
                         <SiGithub size={12} />
                         GitHub
@@ -732,7 +732,7 @@ export default function Home() {
       {/* ══════════════════════════════════════════════════════ CONTACT */}
       <section
         id="contact"
-        className="py-32 md:py-44 px-6 md:px-12 lg:px-24 border-t border-white/5 text-center"
+        className="py-32 md:py-44 px-6 md:px-12 lg:px-24 border-t border-black/5 dark:border-white/5 text-center"
       >
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -742,15 +742,15 @@ export default function Home() {
             transition={{ duration: 0.65 }}
             viewport={{ once: true }}
           >
-            <p className="text-[#00e5ff] text-[11px] tracking-[0.35em] uppercase font-semibold mb-6 flex items-center justify-center gap-3">
-              <span className="w-8 h-px bg-[#00e5ff]" />
+            <p className="text-accent text-[11px] tracking-[0.35em] uppercase font-semibold mb-6 flex items-center justify-center gap-3">
+              <span className="w-8 h-px bg-accent" />
               Contact
-              <span className="w-8 h-px bg-[#00e5ff]" />
+              <span className="w-8 h-px bg-accent" />
             </p>
-            <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] text-white leading-tight mb-8">
+            <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] text-foreground leading-tight mb-8">
               Let's Build
               <br />
-              <span className="text-[#00e5ff]">Something</span> Great
+              <span className="text-accent">Something</span> Great
             </h2>
             <p className="text-zinc-500 text-[15px] max-w-xl mx-auto mb-14 leading-relaxed">
               Open to full-time roles, freelance projects, or just a great conversation about
@@ -758,7 +758,7 @@ export default function Home() {
             </p>
             <a
               href="mailto:info@firdausa.dev"
-              className="glow-cyan inline-flex items-center gap-3 font-display text-xl md:text-2xl text-[#0a0a0a] bg-[#00e5ff] px-8 py-4 rounded-full font-bold hover:bg-[#00e5ff]/90 transition-all duration-200 group"
+              className="glow-accent inline-flex items-center gap-3 font-display text-xl md:text-2xl text-[#0a0a0a] dark:text-[#0a0a0a] bg-accent px-8 py-4 rounded-full font-bold hover:bg-accent/90 transition-all duration-200 group"
             >
               info@firdausa.dev
               <ArrowUpRight
@@ -771,13 +771,13 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════════════════ FOOTER */}
-      <footer className="border-t border-white/5 px-6 md:px-12 lg:px-24 py-8">
+      <footer className="border-t border-black/5 dark:border-white/5 px-6 md:px-12 lg:px-24 py-8">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <p className="text-zinc-700 text-xs tracking-wide">
+            <p className="text-zinc-500 dark:text-zinc-700 text-xs tracking-wide">
               © {new Date().getFullYear()} Firdausa Dahir Salat
             </p>
-            <p className="text-zinc-800 text-[11px] mt-0.5">
+            <p className="text-zinc-400 dark:text-zinc-800 text-[11px] mt-0.5">
               Meta Certified Frontend Engineer · Nairobi, Kenya
             </p>
           </div>
@@ -791,7 +791,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="text-zinc-700 hover:text-[#00e5ff] transition-colors duration-200"
+                  className="text-zinc-500 dark:text-zinc-700 hover:text-accent transition-colors duration-200"
                 >
                   <Icon size={17} />
                 </a>
