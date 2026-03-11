@@ -146,7 +146,7 @@ const projects = [
     name: "Wabber Flow",
     description: "Water network management dashboard for monitoring zones, meters, and customers.",
     image: "/wabberflow.jpg",
-    live: "https://github.com/firdausa7/wabberflow",
+    live: "https://wabberflowapp.vercel.app",
     github: "https://github.com/firdausa7/wabberflow",
     tech: ["React", "Tailwind", "Node.js", "PostgreSQL"],
   },
